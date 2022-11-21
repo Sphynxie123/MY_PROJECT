@@ -1,7 +1,5 @@
-@extends('layouts.shop')
-
-@section('title', 'Products - Edit')
+@extends('layouts.wedding')
 
 @section('content')
-<h1>edit</h1>
+<h1>Edit</h1>
 @endsection

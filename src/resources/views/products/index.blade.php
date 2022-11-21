@@ -1,21 +1,7 @@
-@extends('layouts.shop')
-
-@section('title', 'Products')
+@extends('layouts.wedding')
 
 @section('content')
-<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-    @foreach ($products as $product)
-    <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3">
-                <h4 class="my-0 fw-normal">{{ $product->name }}</h4>
-            </div>
-            <div class="card-body">
-                <h3>{{ $product->description }}</h3>
-                
-            </div>
-        </div>
-    </div>
-    @endforeach
-</div>
+@include('partials.sectionPhotoDescription')
 @endsection
+
+<!-- 2022-10-17 00:58 recording -->

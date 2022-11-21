@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Cache;
 use App\Http\Controllers;
 
 /*
@@ -20,9 +21,29 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/', [Controllers\Products\ProductController::class, 'index']);
+// Route::get('/', [Controllers\ControllerV1::class, 'index'])->name('index');
+Route::get('/', [Controllers\ControllerV1::class, 'index']);
+
 
 Route::prefix('/products')->name('products.')->group(function() {
-    Route::get('/orders', [Controllers\Products\ProductController::class, 'orders'])->name('orders');
-    Route::get('/contact', [Controllers\Products\ProductController::class, 'contact'])->name('contact');;
+    Route::get('/create', [Controllers\ControllerV1::class, 'create'])->name('create');
+    Route::get('/edit', [Controllers\ControllerV1::class, 'edit'])->name('edit');
+    Route::get('/show', [Controllers\ControllerV1::class, 'show'])->name('show');
 });
+
+
+// Route::get('/contact', function (){
+//     return view('contact');
+// });
+
+// Route::get('products', function (){
+//     return view('products');
+// });
+
+// Route::get('signnup', function (){
+//     return view('signnup');
+// });
+
+// Route::get('aboutus', function (){
+//     return view('aboutus');
+// });

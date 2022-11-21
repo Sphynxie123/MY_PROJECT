@@ -13,15 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_accounts', function (Blueprint $table) {
+        Schema::create('photos', function (Blueprint $table) {
             $table->id();
-            // FK            
-            $table->string('name', 20);
-            $table->year('age');            
-            $table->string('adress');
-            $table->string('contact_number');
-            $table->string('username', 100);
-            $table->string('password', 2, 6);
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_accounts');
+        //
     }
 };
